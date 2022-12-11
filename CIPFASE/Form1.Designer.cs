@@ -46,10 +46,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grActions = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btResetConf = new System.Windows.Forms.Button();
             this.btSaveConf = new System.Windows.Forms.Button();
             this.btExit = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
+            this.botomBar = new System.Windows.Forms.Panel();
+            this.lbAuthor = new System.Windows.Forms.Label();
             this.rbSave = new CustomRadioButton();
             this.rbAuto = new CustomRadioButton();
             this.rbIP = new CustomRadioButton();
@@ -60,8 +62,6 @@
             this.tbMask = new CustomTextBox();
             this.tbIP = new CustomTextBox();
             this.cbNetworkInterfaceBox = new CustomFlatComboBox();
-            this.botomBar = new System.Windows.Forms.Panel();
-            this.lbAuthor = new System.Windows.Forms.Label();
             this.topBar.SuspendLayout();
             this.grNetworkAdapter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picInternetCard)).BeginInit();
@@ -249,7 +249,7 @@
             // 
             // grActions
             // 
-            this.grActions.Controls.Add(this.button2);
+            this.grActions.Controls.Add(this.btResetConf);
             this.grActions.Controls.Add(this.btSaveConf);
             this.grActions.Controls.Add(this.btExit);
             this.grActions.Controls.Add(this.btSave);
@@ -262,16 +262,17 @@
             this.grActions.TabStop = false;
             this.grActions.Text = "Akcje";
             // 
-            // button2
+            // btResetConf
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(203)))), ((int)(((byte)(139)))));
-            this.button2.Location = new System.Drawing.Point(6, 98);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 26);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Resetuj Konf.";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btResetConf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btResetConf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(203)))), ((int)(((byte)(139)))));
+            this.btResetConf.Location = new System.Drawing.Point(6, 98);
+            this.btResetConf.Name = "btResetConf";
+            this.btResetConf.Size = new System.Drawing.Size(132, 26);
+            this.btResetConf.TabIndex = 6;
+            this.btResetConf.Text = "Resetuj Konf.";
+            this.btResetConf.UseVisualStyleBackColor = true;
+            this.btResetConf.Click += new System.EventHandler(this.btResetConf_Click);
             // 
             // btSaveConf
             // 
@@ -283,6 +284,7 @@
             this.btSaveConf.TabIndex = 5;
             this.btSaveConf.Text = "Zapisz Konf.";
             this.btSaveConf.UseVisualStyleBackColor = true;
+            this.btSaveConf.Click += new System.EventHandler(this.btSaveConf_Click);
             // 
             // btExit
             // 
@@ -307,6 +309,28 @@
             this.btSave.Text = "Zapisz";
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
+            // botomBar
+            // 
+            this.botomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.botomBar.Controls.Add(this.lbAuthor);
+            this.botomBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.botomBar.Location = new System.Drawing.Point(0, 295);
+            this.botomBar.Name = "botomBar";
+            this.botomBar.Size = new System.Drawing.Size(630, 15);
+            this.botomBar.TabIndex = 12;
+            this.botomBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.botomBar_MouseMove);
+            // 
+            // lbAuthor
+            // 
+            this.lbAuthor.AutoSize = true;
+            this.lbAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
+            this.lbAuthor.Location = new System.Drawing.Point(246, 0);
+            this.lbAuthor.Name = "lbAuthor";
+            this.lbAuthor.Size = new System.Drawing.Size(137, 13);
+            this.lbAuthor.TabIndex = 0;
+            this.lbAuthor.Text = "Wykonał Maurycy Frydecki";
+            this.lbAuthor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbAuthor_MouseMove);
             // 
             // rbSave
             // 
@@ -452,28 +476,6 @@
             this.cbNetworkInterfaceBox.Size = new System.Drawing.Size(458, 24);
             this.cbNetworkInterfaceBox.TabIndex = 3;
             // 
-            // botomBar
-            // 
-            this.botomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.botomBar.Controls.Add(this.lbAuthor);
-            this.botomBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.botomBar.Location = new System.Drawing.Point(0, 295);
-            this.botomBar.Name = "botomBar";
-            this.botomBar.Size = new System.Drawing.Size(630, 15);
-            this.botomBar.TabIndex = 12;
-            this.botomBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.botomBar_MouseMove);
-            // 
-            // lbAuthor
-            // 
-            this.lbAuthor.AutoSize = true;
-            this.lbAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
-            this.lbAuthor.Location = new System.Drawing.Point(246, 0);
-            this.lbAuthor.Name = "lbAuthor";
-            this.lbAuthor.Size = new System.Drawing.Size(137, 13);
-            this.lbAuthor.TabIndex = 0;
-            this.lbAuthor.Text = "Wykonał Maurycy Frydecki";
-            this.lbAuthor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbAuthor_MouseMove);
-            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,7 +537,7 @@
         private System.Windows.Forms.GroupBox grActions;
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btSave;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btResetConf;
         private System.Windows.Forms.Button btSaveConf;
         private CustomRadioButton rbSave;
         private CustomRadioButton rbIP;

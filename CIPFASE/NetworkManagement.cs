@@ -29,7 +29,6 @@ namespace KIP_ASE
             return cards;
         }
 
-
         public static void setIP(string NIC, string ip_address, string subnet_mask)
         {
             ManagementClass objMC = new ManagementClass("Win32_NetworkAdapterConfiguration");

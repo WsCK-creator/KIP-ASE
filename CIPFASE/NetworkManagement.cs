@@ -37,7 +37,7 @@ namespace KIP_ASE
 
             foreach (ManagementObject objMO in objMOC)
             {
-                if ((bool)objMO["IPEnabled"])
+                if (objMO["Caption"].Equals(NIC))
                 {
                     ManagementBaseObject setIP;
                     ManagementBaseObject newIP =
@@ -58,8 +58,13 @@ namespace KIP_ASE
 
             foreach (ManagementObject objMO in objMOC)
             {
-                ManagementBaseObject setDHCP;
-                ManagementBaseObject newDHCP;
+                if(objMO["Caption"].Equals(NIC))
+                {
+                    var ndns = objMO.GetMethodParameters("SetDNSServerSearchOrder");
+                    ndns["DNSServerSearchOrder"] = null;
+                    var enableDhcp = objMO.InvokeMethod("EnableDHCP", null, null);
+                    var setDns = objMO.InvokeMethod("SetDNSServerSearchOrder", ndns, null);
+                }
             }
 
         }
@@ -71,7 +76,7 @@ namespace KIP_ASE
 
             foreach (ManagementObject objMO in objMOC)
             {
-                if ((bool)objMO["IPEnabled"])
+                if (objMO["Caption"].Equals(NIC))
                 {
                     ManagementBaseObject setGateway;
                     ManagementBaseObject newGateway =

@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace CIPFASE
+
+namespace KIP_ASE
 {
     public partial class Form : System.Windows.Forms.Form
     {
@@ -29,6 +22,11 @@ namespace CIPFASE
             InitializeComponent();
             cbNetworkInterfaceBox.Items.Add("Wybierz kartę sieci");
             cbNetworkInterfaceBox.SelectedItem = cbNetworkInterfaceBox.Items[0];
+            List<string> cards = NetworkManagement.getCards();
+            foreach(string card in cards)
+            {
+                cbNetworkInterfaceBox.Items.Add(card);
+            }
         }
 
         private void TopBar_MouseMove(object sender, MouseEventArgs e)
@@ -106,5 +104,15 @@ namespace CIPFASE
             }
         }
 
+        private void btScan_Click(object sender, EventArgs e)
+        {
+            cbNetworkInterfaceBox.Items.Clear();
+            cbNetworkInterfaceBox.Items.Add("Wybierz kartę sieci");
+            List<string> cards = NetworkManagement.getCards();
+            foreach (string card in cards)
+            {
+                cbNetworkInterfaceBox.Items.Add(card);
+            }
+        }
     }
 }

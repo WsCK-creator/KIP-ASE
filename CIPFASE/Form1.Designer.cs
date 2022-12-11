@@ -1,4 +1,4 @@
-﻿namespace CIPFASE
+﻿namespace KIP_ASE
 {
     partial class Form
     {
@@ -32,6 +32,7 @@
             this.TopBar = new System.Windows.Forms.Panel();
             this.lbAppName = new System.Windows.Forms.Label();
             this.grNetworkAdapter = new System.Windows.Forms.GroupBox();
+            this.cbNetworkInterfaceBox = new CustomFlatComboBox();
             this.btScan = new System.Windows.Forms.Button();
             this.picInternetCard = new System.Windows.Forms.PictureBox();
             this.lbIP = new System.Windows.Forms.Label();
@@ -40,36 +41,35 @@
             this.lbDNS1 = new System.Windows.Forms.Label();
             this.lbDNS2 = new System.Windows.Forms.Label();
             this.grNetworkSetings = new System.Windows.Forms.GroupBox();
-            this.grSetings = new System.Windows.Forms.GroupBox();
-            this.grActions = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btSaveConf = new System.Windows.Forms.Button();
-            this.btExit = new System.Windows.Forms.Button();
-            this.btSave = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.rbSave = new CustomRadioButton();
-            this.rbAuto = new CustomRadioButton();
-            this.rbIP = new CustomRadioButton();
-            this.rbDHCP = new CustomRadioButton();
             this.tbDNS1 = new CustomTextBox();
             this.tbDNS2 = new CustomTextBox();
             this.tbGate = new CustomTextBox();
             this.tbMask = new CustomTextBox();
             this.tbIP = new CustomTextBox();
-            this.cbNetworkInterfaceBox = new CustomFlatComboBox();
+            this.grSetings = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.rbSave = new CustomRadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rbAuto = new CustomRadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rbIP = new CustomRadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbDHCP = new CustomRadioButton();
+            this.grActions = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btSaveConf = new System.Windows.Forms.Button();
+            this.btExit = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
             this.TopBar.SuspendLayout();
             this.grNetworkAdapter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picInternetCard)).BeginInit();
             this.grNetworkSetings.SuspendLayout();
             this.grSetings.SuspendLayout();
-            this.grActions.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.grActions.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopBar
@@ -110,6 +110,17 @@
             this.grNetworkAdapter.TabStop = false;
             this.grNetworkAdapter.Text = "Karta Internetowa";
             // 
+            // cbNetworkInterfaceBox
+            // 
+            this.cbNetworkInterfaceBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
+            this.cbNetworkInterfaceBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.cbNetworkInterfaceBox.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
+            this.cbNetworkInterfaceBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
+            this.cbNetworkInterfaceBox.Location = new System.Drawing.Point(54, 28);
+            this.cbNetworkInterfaceBox.Name = "cbNetworkInterfaceBox";
+            this.cbNetworkInterfaceBox.Size = new System.Drawing.Size(458, 24);
+            this.cbNetworkInterfaceBox.TabIndex = 3;
+            // 
             // btScan
             // 
             this.btScan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -119,6 +130,7 @@
             this.btScan.TabIndex = 2;
             this.btScan.Text = "Odśwież";
             this.btScan.UseVisualStyleBackColor = true;
+            this.btScan.Click += new System.EventHandler(this.btScan_Click);
             // 
             // picInternetCard
             // 
@@ -196,6 +208,66 @@
             this.grNetworkSetings.TabStop = false;
             this.grNetworkSetings.Text = "Ustawienia Karty Sieci";
             // 
+            // tbDNS1
+            // 
+            this.tbDNS1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
+            this.tbDNS1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.tbDNS1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
+            this.tbDNS1.Location = new System.Drawing.Point(164, 105);
+            this.tbDNS1.Name = "tbDNS1";
+            this.tbDNS1.Size = new System.Drawing.Size(100, 22);
+            this.tbDNS1.TabIndex = 9;
+            this.tbDNS1.Text = "8.8.8.8";
+            this.tbDNS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbDNS2
+            // 
+            this.tbDNS2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
+            this.tbDNS2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.tbDNS2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
+            this.tbDNS2.Location = new System.Drawing.Point(164, 133);
+            this.tbDNS2.Name = "tbDNS2";
+            this.tbDNS2.Size = new System.Drawing.Size(100, 22);
+            this.tbDNS2.TabIndex = 8;
+            this.tbDNS2.Text = "1.1.1.1";
+            this.tbDNS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbGate
+            // 
+            this.tbGate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
+            this.tbGate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.tbGate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
+            this.tbGate.Location = new System.Drawing.Point(164, 77);
+            this.tbGate.Name = "tbGate";
+            this.tbGate.Size = new System.Drawing.Size(100, 22);
+            this.tbGate.TabIndex = 7;
+            this.tbGate.Text = "192.168.0.1";
+            this.tbGate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbMask
+            // 
+            this.tbMask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
+            this.tbMask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.tbMask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
+            this.tbMask.Location = new System.Drawing.Point(164, 49);
+            this.tbMask.Name = "tbMask";
+            this.tbMask.Size = new System.Drawing.Size(100, 22);
+            this.tbMask.TabIndex = 6;
+            this.tbMask.Text = "255.255.255.0";
+            this.tbMask.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbIP
+            // 
+            this.tbIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
+            this.tbIP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
+            this.tbIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
+            this.tbIP.Location = new System.Drawing.Point(164, 21);
+            this.tbIP.Name = "tbIP";
+            this.tbIP.Size = new System.Drawing.Size(100, 22);
+            this.tbIP.TabIndex = 5;
+            this.tbIP.Text = "192.168.0.20";
+            this.tbIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // grSetings
             // 
             this.grSetings.Controls.Add(this.panel4);
@@ -210,6 +282,111 @@
             this.grSetings.TabIndex = 10;
             this.grSetings.TabStop = false;
             this.grSetings.Text = "Ustawienia";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.rbSave);
+            this.panel4.Location = new System.Drawing.Point(10, 138);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(158, 21);
+            this.panel4.TabIndex = 12;
+            // 
+            // rbSave
+            // 
+            this.rbSave.AutoSize = true;
+            this.rbSave.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
+            this.rbSave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbSave.LastChecked = false;
+            this.rbSave.Location = new System.Drawing.Point(0, 0);
+            this.rbSave.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbSave.Name = "rbSave";
+            this.rbSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbSave.Size = new System.Drawing.Size(158, 21);
+            this.rbSave.TabIndex = 8;
+            this.rbSave.TabStop = true;
+            this.rbSave.Text = "Zapis przy starcie";
+            this.rbSave.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
+            this.rbSave.UseVisualStyleBackColor = true;
+            this.rbSave.Click += new System.EventHandler(this.rbSave_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rbAuto);
+            this.panel3.Location = new System.Drawing.Point(10, 100);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(84, 21);
+            this.panel3.TabIndex = 11;
+            // 
+            // rbAuto
+            // 
+            this.rbAuto.AutoSize = true;
+            this.rbAuto.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
+            this.rbAuto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbAuto.LastChecked = false;
+            this.rbAuto.Location = new System.Drawing.Point(0, 0);
+            this.rbAuto.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbAuto.Name = "rbAuto";
+            this.rbAuto.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbAuto.Size = new System.Drawing.Size(84, 21);
+            this.rbAuto.TabIndex = 6;
+            this.rbAuto.TabStop = true;
+            this.rbAuto.Text = "Auto IP";
+            this.rbAuto.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
+            this.rbAuto.UseVisualStyleBackColor = true;
+            this.rbAuto.Click += new System.EventHandler(this.rbAuto_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.rbIP);
+            this.panel2.Location = new System.Drawing.Point(10, 61);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(148, 21);
+            this.panel2.TabIndex = 10;
+            // 
+            // rbIP
+            // 
+            this.rbIP.AutoSize = true;
+            this.rbIP.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
+            this.rbIP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbIP.LastChecked = false;
+            this.rbIP.Location = new System.Drawing.Point(0, 0);
+            this.rbIP.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbIP.Name = "rbIP";
+            this.rbIP.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbIP.Size = new System.Drawing.Size(148, 21);
+            this.rbIP.TabIndex = 7;
+            this.rbIP.TabStop = true;
+            this.rbIP.Text = "IP Egzaminatora";
+            this.rbIP.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
+            this.rbIP.UseVisualStyleBackColor = true;
+            this.rbIP.Click += new System.EventHandler(this.rbIP_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rbDHCP);
+            this.panel1.Location = new System.Drawing.Point(11, 23);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(133, 21);
+            this.panel1.TabIndex = 9;
+            // 
+            // rbDHCP
+            // 
+            this.rbDHCP.AutoSize = true;
+            this.rbDHCP.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
+            this.rbDHCP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rbDHCP.LastChecked = false;
+            this.rbDHCP.Location = new System.Drawing.Point(0, 0);
+            this.rbDHCP.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbDHCP.Name = "rbDHCP";
+            this.rbDHCP.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbDHCP.Size = new System.Drawing.Size(133, 21);
+            this.rbDHCP.TabIndex = 5;
+            this.rbDHCP.TabStop = true;
+            this.rbDHCP.Tag = "";
+            this.rbDHCP.Text = "Usługa DHCP";
+            this.rbDHCP.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
+            this.rbDHCP.UseVisualStyleBackColor = true;
+            this.rbDHCP.Click += new System.EventHandler(this.rbDHCP_Click);
             // 
             // grActions
             // 
@@ -271,182 +448,6 @@
             this.btSave.Text = "Zapisz";
             this.btSave.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.rbDHCP);
-            this.panel1.Location = new System.Drawing.Point(11, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(133, 21);
-            this.panel1.TabIndex = 9;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.rbIP);
-            this.panel2.Location = new System.Drawing.Point(10, 61);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(148, 21);
-            this.panel2.TabIndex = 10;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.rbAuto);
-            this.panel3.Location = new System.Drawing.Point(10, 100);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(84, 21);
-            this.panel3.TabIndex = 11;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.rbSave);
-            this.panel4.Location = new System.Drawing.Point(10, 138);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(158, 21);
-            this.panel4.TabIndex = 12;
-            // 
-            // rbSave
-            // 
-            this.rbSave.AutoSize = true;
-            this.rbSave.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
-            this.rbSave.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbSave.LastChecked = false;
-            this.rbSave.Location = new System.Drawing.Point(0, 0);
-            this.rbSave.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbSave.Name = "rbSave";
-            this.rbSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbSave.Size = new System.Drawing.Size(158, 21);
-            this.rbSave.TabIndex = 8;
-            this.rbSave.TabStop = true;
-            this.rbSave.Text = "Zapis przy starcie";
-            this.rbSave.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
-            this.rbSave.UseVisualStyleBackColor = true;
-            this.rbSave.Click += new System.EventHandler(this.rbSave_Click);
-            // 
-            // rbAuto
-            // 
-            this.rbAuto.AutoSize = true;
-            this.rbAuto.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
-            this.rbAuto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbAuto.LastChecked = false;
-            this.rbAuto.Location = new System.Drawing.Point(0, 0);
-            this.rbAuto.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbAuto.Name = "rbAuto";
-            this.rbAuto.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbAuto.Size = new System.Drawing.Size(84, 21);
-            this.rbAuto.TabIndex = 6;
-            this.rbAuto.TabStop = true;
-            this.rbAuto.Text = "Auto IP";
-            this.rbAuto.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
-            this.rbAuto.UseVisualStyleBackColor = true;
-            this.rbAuto.Click += new System.EventHandler(this.rbAuto_Click);
-            // 
-            // rbIP
-            // 
-            this.rbIP.AutoSize = true;
-            this.rbIP.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
-            this.rbIP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbIP.LastChecked = false;
-            this.rbIP.Location = new System.Drawing.Point(0, 0);
-            this.rbIP.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbIP.Name = "rbIP";
-            this.rbIP.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbIP.Size = new System.Drawing.Size(148, 21);
-            this.rbIP.TabIndex = 7;
-            this.rbIP.TabStop = true;
-            this.rbIP.Text = "IP Egzaminatora";
-            this.rbIP.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
-            this.rbIP.UseVisualStyleBackColor = true;
-            this.rbIP.Click += new System.EventHandler(this.rbIP_Click);
-            // 
-            // rbDHCP
-            // 
-            this.rbDHCP.AutoSize = true;
-            this.rbDHCP.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
-            this.rbDHCP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rbDHCP.LastChecked = false;
-            this.rbDHCP.Location = new System.Drawing.Point(0, 0);
-            this.rbDHCP.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbDHCP.Name = "rbDHCP";
-            this.rbDHCP.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbDHCP.Size = new System.Drawing.Size(133, 21);
-            this.rbDHCP.TabIndex = 5;
-            this.rbDHCP.TabStop = true;
-            this.rbDHCP.Tag = "";
-            this.rbDHCP.Text = "Usługa DHCP";
-            this.rbDHCP.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(135)))), ((int)(((byte)(112)))));
-            this.rbDHCP.UseVisualStyleBackColor = true;
-            this.rbDHCP.Click += new System.EventHandler(this.rbDHCP_Click);
-            // 
-            // tbDNS1
-            // 
-            this.tbDNS1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
-            this.tbDNS1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.tbDNS1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
-            this.tbDNS1.Location = new System.Drawing.Point(164, 105);
-            this.tbDNS1.Name = "tbDNS1";
-            this.tbDNS1.Size = new System.Drawing.Size(100, 22);
-            this.tbDNS1.TabIndex = 9;
-            this.tbDNS1.Text = "8.8.8.8";
-            this.tbDNS1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbDNS2
-            // 
-            this.tbDNS2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
-            this.tbDNS2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.tbDNS2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
-            this.tbDNS2.Location = new System.Drawing.Point(164, 133);
-            this.tbDNS2.Name = "tbDNS2";
-            this.tbDNS2.Size = new System.Drawing.Size(100, 22);
-            this.tbDNS2.TabIndex = 8;
-            this.tbDNS2.Text = "1.1.1.1";
-            this.tbDNS2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbGate
-            // 
-            this.tbGate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
-            this.tbGate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.tbGate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
-            this.tbGate.Location = new System.Drawing.Point(164, 77);
-            this.tbGate.Name = "tbGate";
-            this.tbGate.Size = new System.Drawing.Size(100, 22);
-            this.tbGate.TabIndex = 7;
-            this.tbGate.Text = "192.168.0.1";
-            this.tbGate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbMask
-            // 
-            this.tbMask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
-            this.tbMask.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.tbMask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
-            this.tbMask.Location = new System.Drawing.Point(164, 49);
-            this.tbMask.Name = "tbMask";
-            this.tbMask.Size = new System.Drawing.Size(100, 22);
-            this.tbMask.TabIndex = 6;
-            this.tbMask.Text = "255.255.255.0";
-            this.tbMask.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbIP
-            // 
-            this.tbIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
-            this.tbIP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.tbIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
-            this.tbIP.Location = new System.Drawing.Point(164, 21);
-            this.tbIP.Name = "tbIP";
-            this.tbIP.Size = new System.Drawing.Size(100, 22);
-            this.tbIP.TabIndex = 5;
-            this.tbIP.Text = "192.168.0.20";
-            this.tbIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cbNetworkInterfaceBox
-            // 
-            this.cbNetworkInterfaceBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
-            this.cbNetworkInterfaceBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(64)))));
-            this.cbNetworkInterfaceBox.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(94)))));
-            this.cbNetworkInterfaceBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(222)))), ((int)(((byte)(233)))));
-            this.cbNetworkInterfaceBox.Location = new System.Drawing.Point(54, 28);
-            this.cbNetworkInterfaceBox.Name = "cbNetworkInterfaceBox";
-            this.cbNetworkInterfaceBox.Size = new System.Drawing.Size(458, 24);
-            this.cbNetworkInterfaceBox.TabIndex = 3;
-            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,15 +471,15 @@
             this.grNetworkSetings.ResumeLayout(false);
             this.grNetworkSetings.PerformLayout();
             this.grSetings.ResumeLayout(false);
-            this.grActions.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.grActions.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
